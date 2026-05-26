@@ -28,3 +28,39 @@ if (btn && nav) {
         }
     });
 }
+
+function openPopup(popupId) {
+    const popup = document.getElementById(`popup-${popupId}`);
+    if (popup) {
+        popup.classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+    }
+}
+
+function closePopup(popupId) {
+    const popup = document.getElementById(`popup-${popupId}`);
+    if (popup) {
+        popup.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll("[data-popup]");
+    cards.forEach(card => {
+        card.addEventListener("click", function () {
+            const popupId = this.getAttribute("data-popup");
+            openPopup(popupId);
+        });
+    });
+
+    // Close popup when clicking outside the content
+    document.querySelectorAll("[id^='popup-']").forEach(popup => {
+        popup.addEventListener("click", function (e) {
+            if (e.target === this) {
+                const popupId = this.id.replace("popup-", "");
+                closePopup(popupId);
+            }
+        });
+    });
+});
