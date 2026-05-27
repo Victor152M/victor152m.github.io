@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
     rel="stylesheet">
 </head>
-<body class="font-[Inter]">
+<body class="font-[Inter] bg-[#FFEEFD]">
     <header class="max-w-5xl mx-auto px-4 flex justify-between items-center py-8 relative">
                 <div class="flex gap-7 items-center">
                     <a href="./index.html" class="hover:opacity-80 transition"><h1 class="text-xl font-bold">Pay Her Fairly</h1></a>
@@ -164,7 +164,8 @@
 
         <!-- CARDS -->
         <div class="grid md:grid-cols-3 gap-6 mt-0">
-            <div class="max-w-md mx-auto bg-white rounded-xl overflow-hidden">
+            <!-- Kate Rotondo Card -->
+            <div class="max-w-xs mx-auto rounded-xl overflow-hidden cursor-pointer" data-popup="kate">
                 <!-- Image -->
                 <img
                     class="w-full h-72 object-cover rounded-xl"
@@ -186,7 +187,8 @@
                 </div>
             </div>
 
-            <div class="max-w-xs mx-auto bg-white rounded-xl overflow-hidden">
+            <!-- Ulku Rowe Card -->
+            <div class="max-w-xs mx-auto rounded-xl overflow-hidden cursor-pointer" data-popup="ulku">
                 <!-- Image -->
                 <img
                     class="w-full h-72 object-cover rounded-xl"
@@ -208,7 +210,8 @@
                 </div>
             </div>
 
-                <div class="max-w-xs mx-auto bg-white rounded-xl overflow-hidden">
+            <!-- Jennifer Doudna Card -->
+            <div class="max-w-xs mx-auto rounded-xl overflow-hidden cursor-pointer" data-popup="jennifer">
                 <!-- Image -->
                 <img
                     class="w-full h-72 object-cover rounded-xl"
@@ -226,6 +229,62 @@
                     <p class="text-gray-600 text-xs leading-5"> Jennifer Doudna, Nobel Prize-winning 
                         scientist and CRISPR co-developer, has spoken about the underrepresentation 
                         of women in scientific leadership.  </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup Containers -->
+        <!-- Kate Rotondo Popup -->
+        <div id="popup-kate" class="hidden fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-50 overflow-y-auto py-4">
+            <div class="bg-white rounded-xl p-6 max-w-md w-full mx-4 relative my-auto max-h-[90vh] overflow-y-auto">
+                <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 hover:cursor-pointer text-2xl font-bold" onclick="closePopup('kate')">&times;</button>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 pr-6">Kate Rotondo</h3>
+                <div id="content-kate" class="text-gray-600 text-sm leading-relaxed">
+                    <p>Kate Rotondo, a software engineer in the tech industry, discovered that she was earning significantly less than her male colleagues for similar work.</p>
+                    <br>
+                    <p>After comparing salaries with coworkers, she found that several men in her team were earning higher base salaries and additional compensation, even though they had comparable roles and responsibilities. In total, the difference reached around $25,000 in base pay, plus additional equity differences.When she raised the issue internally, her concerns were investigated, but the company concluded there would be no salary adjustment. This experience led her to question pay transparency and fairness in the workplace.</p>
+                    <br>
+                    <p>Eventually, she chose to leave the company. Later, she spoke publicly about her experience to highlight how difficult it can be to identify and challenge pay inequality when salaries are not transparent. Her story shows how the gender pay gap is often not obvious at first - and how it can persist even among highly qualified professionals in STEM fields.</p>
+                    <br>    
+                    <p>Source: Inspired by reporting from The Muse (Sydney Pereira) and ABC News interviews with Kate Rotondo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ulku Rowe Popup -->
+        <div id="popup-ulku" class="hidden fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-50 overflow-y-auto py-4">
+            <div class="bg-white rounded-xl p-6 max-w-md w-full mx-4 relative my-auto max-h-[90vh] overflow-y-auto">
+                <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 hover:cursor-pointer text-2xl font-bold" onclick="closePopup('ulku')">&times;</button>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 pr-6">Ulku Rowe</h3>
+                <div id="content-ulku" class="text-gray-600 text-sm leading-relaxed">
+                    <p>Ulku Rowe, a professional in the tech industry, publicly shared her experience with salary inequality after gaining access to information about pay differences within her workplace.</p>
+                    <br>
+                    <p>She discovered that colleagues in similar roles were earning higher salaries, despite comparable responsibilities and performance. This situation became visible only after discussions and increased awareness around pay transparency.</p>
+                    <br>
+                    <p>Her case is often used to illustrate how lack of salary transparency can hide gender-based pay differences, making it difficult for employees to recognise inequality without direct comparison.</p>
+                    <br>
+                    <p>It also highlights an important point: even in highly qualified STEM environments, pay differences can persist when salary structures are not open or clearly regulated.</p>
+                    <br>
+                    <p>Source: This case is based on publicly shared professional experience discussed in pay transparency research and media commentary.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jennifer Doudna Popup -->
+        <div id="popup-jennifer" class="hidden fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-50 overflow-y-auto py-4">
+            <div class="bg-white rounded-xl p-6 max-w-md w-full mx-4 relative my-auto max-h-[90vh] overflow-y-auto">
+                <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 hover:cursor-pointer text-2xl font-bold" onclick="closePopup('jennifer')">&times;</button>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 pr-6">Jennifer Doudna</h3>
+                <div id="content-jennifer" class="text-gray-600 text-sm leading-relaxed">
+                    <p>Jennifer Doudna has become a leading figure in modern molecular biology. Her research has significantly transformed genetic engineering and medicine, contributing to one of the most important scientific breakthroughs of the 21st century.</p>
+                    <br>
+                    <p>Despite her success, Doudna has publicly addressed the ongoing lack of representation of women in scientific leadership and high-level research positions. She has highlighted that women in STEM often face structural barriers that can affect their career progression, including reduced access to research funding, fewer leadership opportunities, and lower visibility in major scientific projects.</p>
+                    <br>
+                    <p>Doudna's career reflects both achievement and inequality: while she ultimately received the Nobel Prize in Chemistry, she has emphasized that success stories like hers are still less common for women in science. Her experience illustrates that even at the highest levels of scientific recognition, gender imbalance remains present in research environments.</p>
+                    <br>
+                    <p>Her story is frequently referenced in discussions about gender equality in STEM, as it shows that underrepresentation is not only an entry-level issue, but also a challenge that persists in senior academic and leadership positions.</p>
+                    <br>
+                    <p>Source: Doudna, J. A., & Sternberg, S. H. (2017). A Crack in Creation: Gene Editing and the Unthinkable Power to Control Evolution. Nobel Prize in Chemistry 2020 - Jennifer Doudna profile (NobelPrize.org)</p>
                 </div>
             </div>
         </div>
@@ -264,7 +323,7 @@
         <!-- CARDS -->
         <div class="grid md:grid-cols-3 gap-6 items-start">
 
-            <div class="max-w-xs mx-auto bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+            <div class="max-w-xs mx-auto bg-[#FFCEEB] border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                 <div class="p-4 pt-2 text-left pr-2">
                     <!-- Title -->
                     <a>
@@ -286,7 +345,7 @@
                 </div>
             </div>
 
-            <div class="max-w-xs mx-auto bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+            <div class="max-w-xs mx-auto bg-[#FFCEEB] border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                 <div class="p-4 pt-2 text-left pr-2">
                     <!-- Title -->
                     <a>
@@ -308,7 +367,7 @@
                 </div>
             </div>
 
-            <div class="max-w-xs mx-auto bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+            <div class="max-w-xs mx-auto bg-[#FFCEEB] border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                 <div class="p-4 pt-2 text-left pr-2">
                     <!-- Title -->
                     <a>
@@ -350,74 +409,74 @@
 
         <div class="grid md:grid-cols-3 gap-6 mb-12">
             
-            <div class="max-w-md mx-auto border border-gray-200 rounded-xl 
-                overflow-hidden shadow-md bg-gray-100" >
+            <div class="max-w-xs mx-auto border border-gray-200 rounded-xl 
+                overflow-hidden shadow-md bg-[#FFCEEB]" >
                 <div class="p-4 pt-2 pr-2 text-left">
                     <!-- Title -->
-                    <a href="https://womeninstem.org/">
+                    <a href="https://womeninstem.org/" target="_blank">
                         <h5 class="mt-2 text-base font-semibold text-gray-900 leading-snug">
                             womeninstem
                         </h5>
                     </a>
-                    <a href="https://womeninstem.org/">
+                    <a href="https://womeninstem.org/" target="_blank">
                     <p class="text-gray-600 text-xs mt-2 leading-5"> An international organisation working with 
                         high schools to inspire young women to pursue STEM careers. </p>
                     </a>
                 </div>
                 
                 <!-- Image -->
-                <a class="block mt-0" href="https://womeninstem.org/">
+                <a class="block mt-0" href="https://womeninstem.org/" target="_blank">
                 <img
-                    class="w-6/7 h-36 mx-auto"
+                    class="h-36 mx-auto"
                     src="./assets/images/community1.png"
                     alt=""
                 />
                 </a>
             </div>
             
-            <div class="max-w-md mx-auto border border-gray-200 rounded-xl 
-                overflow-hidden shadow-md bg-gray-100">
+            <div class="max-w-xs mx-auto border border-gray-200 rounded-xl 
+                overflow-hidden shadow-md bg-[#FFCEEB]">
                 <div class="p-4 pt-2 pr-2 text-left">
                     <!-- Title -->
-                    <a href="https://www.womeninstemleaders.org/">
+                    <a href="https://www.womeninstemleaders.org/" target="_blank">
                         <h5 class="mt-2 text-base font-semibold text-gray-900 leading-snug">
                             womeninstemleaders
                         </h5>
                     </a>
-                    <a href="https://www.womeninstemleaders.org/">
+                    <a href="https://www.womeninstemleaders.org/" target="_blank">
                     <p class="text-gray-600 text-xs mt-2 leading-5"> A global platform promoting women's 
                         advancement in STEM by working with governments, businesses, and communities. </p>
                     </a>
                 </div>
                 
                 <!-- Image -->
-                <a href="https://www.womeninstemleaders.org/" class="block mt-0">
+                <a href="https://www.womeninstemleaders.org/" target="_blank" class="block mt-0">
                 <img
-                    class="w-6/7 h-36 mx-auto"
+                    class="h-36 mx-auto"
                     src="./assets/images/community2.png"
                     alt=""
                 />
                 </a>
             </div>
-            <div class="max-w-md mx-auto border border-gray-200 rounded-xl 
-                overflow-hidden shadow-md bg-gray-100">
+            <div class="max-w-xs mx-auto border border-gray-200 rounded-xl 
+                overflow-hidden shadow-md bg-[#FFCEEB]">
                 <div class="p-4 pt-2 pr-2 text-left">
                     <!-- Title -->
-                    <a href="https://womeninstemnetwork.com/">
+                    <a href="https://womeninstemnetwork.com/" target="_blank">
                         <h5 class="mt-2 text-base font-semibold text-gray-900 leading-snug">
                             womeninstemnetwork
                         </h5>
                     </a>
-                    <a href="https://womeninstemnetwork.com/">
+                    <a href="https://womeninstemnetwork.com/" target="_blank">
                     <p class="text-gray-600 text-xs mt-2 leading-5"> A network sharing research, data, 
                         and resources on women's representation and pay in STEM fields worldwide. </p>
                     </a>
                 </div>
                 
                 <!-- Image -->
-                <a href="https://womeninstemnetwork.com/" class="block mt-0">
+                <a href="https://womeninstemnetwork.com/" target="_blank" class="block mt-0">
                 <img
-                    class="w-6/7 h-36 mx-auto"
+                    class="h-36 mx-auto"
                     src="./assets/images/community3.png"
                     alt=""
                 />
